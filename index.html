@@ -62,9 +62,48 @@
             0% { transform: translateX(100%); }
             100% { transform: translateX(0%); }
         }
+        @keyframes fadeIn {
+          from {
+            opacity: 0; /* Départ semi-transparent */
+          }
+          to {
+            opacity: 1; /* Fini opaque */
+          }
+        }
+        @keyframes fade-video-1 {
+          0% { opacity: 0; }
+          5% { opacity: 1; }
+          28.57% { opacity: 1; }
+          29.57% { opacity: 0; }
+          37.14% { opacity: 0; }
+          100% { opacity: 0; }
+        }
+        @keyframes fade-video-2 {
+          0% { opacity: 0; }
+          22% { opacity: 0; }
+          28.57% { opacity: 1; }
+          37.14% { opacity: 1; }
+          42% { opacity: 0; }
+          100% { opacity: 0; }
+        }
+        @keyframes fade-video-3 {
+          0% { opacity: 0; } 
+          42% { opacity: 0; } 
+          43.57% { opacity: 1; }
+          48.57% { opacity: 1; }
+          55.57% { opacity: 0; }
+          100% { opacity: 0; }
+        }
+        @keyframes fade-video-4 {
+          0% { opacity: 0; } 
+          51.57% { opacity: 0; }
+          52.57% { opacity: 1; }
+          67.57% { opacity: 1; }
+          100% { opacity: 0; }
+        }
         .title-container {
             position: relative;
-            width: 50vw;
+            width: 70vw;
             margin-top: 10vh;
             margin-left: auto;
             margin-right: auto;
@@ -82,18 +121,71 @@
             display: inline-block;
         }
         .subtitle {
+            animation: fadeIn 0.66666s linear forwards;
             font-size: 2.5rem;
             color: rgb(105, 159, 205);
             display: inline-block;
             position: absolute;         
         }
         .sub-1 {
-            top: 2.5rem;
+            top: 2.8rem;
             left: 2rem;
         }
         .sub-2 {
             top: 5rem;
             left: 2rem;
+        }
+        .floating-video-container {
+            position: fixed; /* Rendre la div flottante par rapport à la fenêtre */
+            width: 300px; /* Largeur de la div */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ajout d'une ombre pour un effet visuel */
+            border-radius: 2px; /* Coins arrondis */
+            overflow: hidden; /* Assure que le coin de la vidéo est arrondi */
+            z-index: 1000; /* Assurer que la vidéo flotte au-dessus d'autres éléments */
+            opacity: 0; /* Initialise tous les conteneurs à invisible */
+            animation-duration: 36s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite; /* Boucle infinie */
+        }
+        .floating-video-container-1 {
+            animation-name: fade-video-1;
+            bottom: 7vh;
+            right: 10vw;
+        }
+        .floating-video-container-2 {
+            animation-name: fade-video-2;
+            bottom: 5vh;
+            left: 10vw;
+        }
+        .floating-video-container-3 {
+            animation-name: fade-video-3;
+            bottom: 3vh;
+            right: 40vw;
+        }
+        .floating-video-container-4 {
+            animation-name: fade-video-4;
+            bottom: 15vh;
+            right: 12vw;
+        }
+        .floating-video {
+            width: 100%;
+        }
+        video {
+            margin-bottom: -8px;
+        }
+
+        .styled-quote {
+            margin-top: 5rem;   
+            position: relative;
+            padding-left: 1rem;
+            border-left: 10px solid #ccc;
+            font-style: italic;
+        }
+
+        .styled-quote p {
+            color: #444750;
+            margin: 0;
+            font-size: 1.2em;
         }
     </style>
 </head>
@@ -105,7 +197,41 @@
             <div class="title">StreamLev</div>
             <div class="subtitle sub-1">Optimisation</div>
             <div class="subtitle sub-2">Opérationnelle</div>
+
+            <blockquote class="styled-quote quote-1">
+                <p>Imaginez embaucher uniquement les meilleurs travailleurs.</p>
+                <p>Quel que soit leur parcours personnel ou leur niveau de compétence dans leur domaine d'expertise.</p>
+            </blockquote>
         </div>
+ 
+        <div class="floating-video-container floating-video-container-1">
+          <video class="floating-video" autoplay muted loop>
+            <source src="https://videos.pexels.com/video-files/5725960/5725960-sd_640_360_30fps.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la balise vidéo.
+          </video>
+        </div>
+
+        <div class="floating-video-container floating-video-container-2">
+          <video class="floating-video" autoplay muted loop>
+            <source src="https://videos.pexels.com/video-files/3196061/3196061-sd_640_360_25fps.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la balise vidéo.
+          </video>
+        </div>
+
+        <div class="floating-video-container floating-video-container-3">
+          <video class="floating-video" autoplay muted loop>
+            <source src="https://videos.pexels.com/video-files/3249940/3249940-sd_640_360_25fps.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la balise vidéo.
+          </video>
+        </div>
+
+        <div class="floating-video-container floating-video-container-4">
+          <video class="floating-video" autoplay muted loop>
+            <source src="https://videos.pexels.com/video-files/3196062/3196062-sd_640_360_25fps.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la balise vidéo.
+          </video>
+        </div>
+
     </div>
 </body>
-</html> 
+</html>     
