@@ -252,6 +252,7 @@
 
 .form-textarea {
     height: 100px;
+    width: calc(100% - 20px);
     resize: vertical;
 }
 
@@ -270,6 +271,11 @@
 .inline-block {
     display: inline-block;
     margin-right: 10px;
+}
+
+.disable {
+    pointer-events: none;
+    opacity: 0.4;
 }
 
 .form-button:hover {
@@ -372,6 +378,7 @@
             event.preventDefault();
             const form = document.getElementById('contactForm');
             const formData = new FormData(form);
+            document.querySelector('.form-button').classList.add('disable');
 
             fetch('https://script.google.com/macros/s/AKfycbx_scWEN6n-M_sbBd99i0n6AuYyZPqYKXoMNLlzq9syzjThLFs_53oRn2FuoneFHpO2LQ/exec', {
                 method: 'POST',
@@ -379,10 +386,14 @@
             })
             .then(response => response.text())
             .then(data => {
+                document.querySelector('.form-button').classList.remove('disable');
                 document.querySelector('.contact-form-group').classList.remove('visible');
                 document.querySelector('.contact-button').innerText = data;
             })
-            .catch(error => console.error('Erreur:', error));
+            .catch(error => {
+                document.querySelector('.form-button').classList.remove('disable');
+                console.error('Erreur avec le formulaire:', error);
+            });
         }
     </script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
