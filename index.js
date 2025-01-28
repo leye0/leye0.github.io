@@ -47,6 +47,7 @@ function handleSubmit(event) {
         .then(data => {
             document.querySelector('.form-button').classList.remove('disable');
             document.querySelector('.contact-form-group').classList.remove('visible');
+            document.querySelector('.overlay-panel').classList.remove('overlay');
             document.querySelector('.contact-button').innerText = data;
         })
         .catch(error => {
