@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,283 +8,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=GFS+Didot&display=swap" rel="stylesheet">
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            overflow: hidden;
-            font-family: "GFS Didot", serif;
-        }
-
-        h1, h2, h3, h4, h5 {
-            margin: 0;
-        }
-
-        .sky {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(180deg, #FFFFF0 70%, #FFFFFF 100%);
-            background-size: 200% 200%;
-            animation: gradientAnimation 4s linear 1;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .clouds, .color-cloud {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            pointer-events: none;
-        }
-
-        .clouds {
-            background: radial-gradient(circle, rgba(182, 182, 182, 0.6) 20%, transparent 40%);
-            background-size: 200% 200%;
-            animation: cloudsAnimation 4s linear 1;
-        }
-
-        .color-cloud {
-            background: radial-gradient(circle, rgba(242, 242, 242, 0.3) 20%, transparent 90%);
-            filter: blur(40px);
-            background-size: 150% 150%;
-            animation: colorCloudAnimation 4s linear 1;
-            border-radius: 100px;
-        }
-
-        @keyframes gradientAnimation {
-            0% { background-position: 100% 50%; }
-            100% { background-position: 0% 0%; }
-        }
-
-        @keyframes cloudsAnimation {
-            0% { background-position: 100% 100%; }
-            100% { background-position: 0% 0%; }
-        }
-
-        @keyframes colorCloudAnimation {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(0%); }
-        }
-        @keyframes fadeIn {
-          from {
-            opacity: 0; /* Départ semi-transparent */
-          }
-          to {
-            opacity: 1; /* Fini opaque */
-          }
-        }
-        @keyframes fade-video-1 {
-          0% { opacity: 0; }
-          5% { opacity: 1; }
-          28.57% { opacity: 1; }
-          29.57% { opacity: 0; }
-          37.14% { opacity: 0; }
-          100% { opacity: 0; }
-        }
-        @keyframes fade-video-2 {
-          0% { opacity: 0; }
-          22% { opacity: 0; }
-          28.57% { opacity: 1; }
-          37.14% { opacity: 1; }
-          42% { opacity: 0; }
-          100% { opacity: 0; }
-        }
-        @keyframes fade-video-3 {
-          0% { opacity: 0; } 
-          42% { opacity: 0; } 
-          43.57% { opacity: 1; }
-          48.57% { opacity: 1; }
-          55.57% { opacity: 0; }
-          100% { opacity: 0; }
-        }
-        @keyframes fade-video-4 {
-          0% { opacity: 0; } 
-          51.57% { opacity: 0; }
-          52.57% { opacity: 1; }
-          67.57% { opacity: 1; }
-          100% { opacity: 0; }
-        }
-        .title-container {
-            display: block;
-            position: relative;
-            width: 70vw;
-            margin-top: 10vh;
-            margin-left: auto;
-            margin-right: auto;
-            font-weight: 400;
-            font-style: normal;
-        }
-        .text-shadow {
-            text-shadow: 1px 1px 2px rgba(128, 128, 128, 0.5), /* Ombre plus proche pour définition */
-                         1px 3px 3px rgba(128, 128, 128, 0.3); /* Ombre plus large pour profondeur */
-        }
-        .title {
-            font-size: 3rem;
-            color: rgb(0, 139, 211);
-            display: inline-block;
-        }
-        .subtitle {
-            animation: fadeIn 0.66666s linear forwards;
-            font-size: 2.5rem;
-            color: rgb(105, 159, 205);
-            display: inline-block;
-            position: absolute;         
-        }
-        .sub-1 {
-            top: 2.8rem;
-            left: 2rem;
-        }
-        .sub-2 {
-            top: 5rem;
-            left: 2rem;
-        }
-        .floating-video-container {
-            /* Vidéos cachés pour l'instant */
-            display: none;
-
-            position: fixed; /* Rendre la div flottante par rapport à la fenêtre */
-            width: 300px; /* Largeur de la div */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ajout d'une ombre pour un effet visuel */
-            border-radius: 2px; /* Coins arrondis */
-            overflow: hidden; /* Assure que le coin de la vidéo est arrondi */
-            z-index: 1000; /* Assurer que la vidéo flotte au-dessus d'autres éléments */
-            opacity: 0; /* Initialise tous les conteneurs à invisible */
-            animation-duration: 36s;
-            animation-timing-function: linear;
-            animation-iteration-count: infinite; /* Boucle infinie */
-        }
-        .floating-video-container-1 {
-            animation-name: fade-video-1;
-            bottom: 7vh;
-            right: 10vw;
-        }
-        .floating-video-container-2 {
-            animation-name: fade-video-2;
-            bottom: 5vh;
-            left: 10vw;
-        }
-        .floating-video-container-3 {
-            animation-name: fade-video-3;
-            bottom: 3vh;
-            right: 40vw;
-        }
-        .floating-video-container-4 {
-            animation-name: fade-video-4;
-            bottom: 15vh;
-            right: 12vw;
-        }
-        .floating-video {
-            width: 100%;
-        }
-        video {
-            margin-bottom: -8px;
-        }
-
-        .styled-quote {
-            margin-top: 5rem;   
-            position: relative;
-            padding-left: 1rem;
-            border-left: 10px solid #ccc;
-            font-style: italic;
-        }
-
-        .styled-quote p {
-            color: #444750;
-            margin: 0;
-            font-size: 1.2em;
-        }
-        .cookie-popup {
-            background-color: #444750;
-            color: white;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 10px;
-            text-align: center;
-            z-index: 500;
-        }
-        .visible {
-            display: block !important;
-        }
-        a {
-            color: white;
-        }
-#contactForm {
-    max-width: 600px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: absolute;
-    bottom: 48px;
-    left: 12px;
-}
-
-.contact-form-group {
-    display: none;
-}
-
-.contact-button {
-    display: block;
-    user-select: none;
-    cursor: pointer;
-    color: #007bff;
-}
-
-.form-input, .form-textarea {
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    font-family: 'Arial', sans-serif;
-    transition: border-color 0.3s ease-in-out;
-}
-
-.form-input:focus, .form-textarea:focus {
-    border-color: #007bff;
-    outline: none;
-}
-
-.form-textarea {
-    height: 100px;
-    width: calc(100% - 20px);
-    resize: vertical;
-}
-
-.form-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-}
-
-.inline-block {
-    display: inline-block;
-    margin-right: 10px;
-}
-
-.disable {
-    pointer-events: none;
-    opacity: 0.4;
-}
-
-.form-button:hover {
-    background-color: #0056b3;
-}
-    </style>
+    <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
+    <div class="overlay-panel"></div>
     <div class="sky">
         <div class="clouds"></div>
         <div class="color-cloud"></div>
@@ -297,33 +26,37 @@
                 <p>Quel que soit leur parcours personnel ou leur niveau de compétence dans leur domaine d'expertise.</p>
             </blockquote>
         </div>
- 
+
         <div class="floating-video-container floating-video-container-1">
-          <video class="floating-video" autoplay muted loop>
-            <source src="https://videos.pexels.com/video-files/5725960/5725960-sd_640_360_30fps.mp4" type="video/mp4">
-            Votre navigateur ne supporte pas la balise vidéo.
-          </video>
+            <video class="floating-video" autoplay muted loop>
+                <source src="https://videos.pexels.com/video-files/5725960/5725960-sd_640_360_30fps.mp4"
+                    type="video/mp4">
+                Votre navigateur ne supporte pas la balise vidéo.
+            </video>
         </div>
 
         <div class="floating-video-container floating-video-container-2">
-          <video class="floating-video" autoplay muted loop>
-            <source src="https://videos.pexels.com/video-files/3196061/3196061-sd_640_360_25fps.mp4" type="video/mp4">
-            Votre navigateur ne supporte pas la balise vidéo.
-          </video>
+            <video class="floating-video" autoplay muted loop>
+                <source src="https://videos.pexels.com/video-files/3196061/3196061-sd_640_360_25fps.mp4"
+                    type="video/mp4">
+                Votre navigateur ne supporte pas la balise vidéo.
+            </video>
         </div>
 
         <div class="floating-video-container floating-video-container-3">
-          <video class="floating-video" autoplay muted loop>
-            <source src="https://videos.pexels.com/video-files/3249940/3249940-sd_640_360_25fps.mp4" type="video/mp4">
-            Votre navigateur ne supporte pas la balise vidéo.
-          </video>
+            <video class="floating-video" autoplay muted loop>
+                <source src="https://videos.pexels.com/video-files/3249940/3249940-sd_640_360_25fps.mp4"
+                    type="video/mp4">
+                Votre navigateur ne supporte pas la balise vidéo.
+            </video>
         </div>
 
         <div class="floating-video-container floating-video-container-4">
-          <video class="floating-video" autoplay muted loop>
-            <source src="https://videos.pexels.com/video-files/3196062/3196062-sd_640_360_25fps.mp4" type="video/mp4">
-            Votre navigateur ne supporte pas la balise vidéo.
-          </video>
+            <video class="floating-video" autoplay muted loop>
+                <source src="https://videos.pexels.com/video-files/3196062/3196062-sd_640_360_25fps.mp4"
+                    type="video/mp4">
+                Votre navigateur ne supporte pas la balise vidéo.
+            </video>
         </div>
 
         <form id="contactForm" onsubmit="handleSubmit(event)">
@@ -345,57 +78,13 @@
     </div>
 
     <div id="cookie-popup" class="cookie-popup">
-        Notre site utilise des cookies pour améliorer votre expérience. 
+        Notre site utilise des cookies pour améliorer votre expérience.
         <a class="showmore" href="cookie-policy.html">En savoir plus</a>
         <button class="accept-cookies">Accepter</button>
         <button class="reject-cookies">Rejeter</button>
     </div>
-
-    <script>
-        document.querySelector('.accept-cookies').addEventListener('click', function() {
-          document.querySelector('.cookie-popup').style.display = 'none';
-          document.cookie = "cookiesAccepted=true; path=/;";
-        });
-        
-        document.querySelector('.reject-cookies').addEventListener('click', function() {
-          document.querySelector('.cookie-popup').style.display = 'none';
-          document.cookie = "cookiesAccepted=false; path=/;";
-        });
-
-        // Check cookie on load
-        window.onload = function() {
-          if (!document.cookie.includes('cookiesAccepted=true')) {
-            document.getElementById('cookie-popup').style.display = 'block';
-          }
-        };
-
-        document.querySelector('.contact-button').addEventListener('click', function() {
-            document.querySelector('.contact-button').innerText = 'Contactez-nous';
-            document.querySelector('.contact-form-group').classList.toggle('visible');
-        });
-
-        function handleSubmit(event) {
-            event.preventDefault();
-            const form = document.getElementById('contactForm');
-            const formData = new FormData(form);
-            document.querySelector('.form-button').classList.add('disable');
-
-            fetch('https://script.google.com/macros/s/AKfycbx_scWEN6n-M_sbBd99i0n6AuYyZPqYKXoMNLlzq9syzjThLFs_53oRn2FuoneFHpO2LQ/exec', {
-                method: 'POST',
-                body: formData,
-            })
-            .then(response => response.text())
-            .then(data => {
-                document.querySelector('.form-button').classList.remove('disable');
-                document.querySelector('.contact-form-group').classList.remove('visible');
-                document.querySelector('.contact-button').innerText = data;
-            })
-            .catch(error => {
-                document.querySelector('.form-button').classList.remove('disable');
-                console.error('Erreur avec le formulaire:', error);
-            });
-        }
-    </script>
+    <script src="index.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>
-</html>     
+
+</html>
