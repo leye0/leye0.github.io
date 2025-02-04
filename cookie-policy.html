@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,98 +7,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=GFS+Didot&display=swap" rel="stylesheet">
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            overflow: hidden;
-            font-family: "GFS Didot", serif;
-            background: linear-gradient(180deg, #FFFFF0 70%, #FFFFFF 100%);
-
-            font-weight: 300;
-        }
-
-        .policy-cookie {
-            font-size: 18px;
-            width: 100%;
-            height: 100%;
-            overflow-y: scroll;
-            text-align: justify;
-            white-space: pre-line;
-            margin-top: 24px;
-            display: flex;
-            border-top: 1px solid #999;
-        }
-        
-        b {
-            font-size: 22px;
-        }
-        h1, h2, h3, h4, b {
-            color: rgb(0, 139, 211);
-            font-weight: 900;
-            margin: 12px;
-            margin-left: 0px;
-        }
-        h2, h3, h4 {
-            display: inline-block;
-        }
-        .language {
-            padding-left: 48px;
-            padding-right: 48px;
-            width: 48vw;
-            display: inline-block;
-        }
-        br {
-            padding: 32px;
-            display: block;
-        }
-        .title-container {
-            position: relative;
-            font-weight: 400;
-            font-style: normal;
-            height: 120px;
-        }
-        .text-shadow {
-            text-shadow: 1px 1px 2px rgba(128, 128, 128, 0.5), /* Ombre plus proche pour définition */
-                         1px 3px 3px rgba(128, 128, 128, 0.3); /* Ombre plus large pour profondeur */
-        }
-        .title {
-            padding-left: 48px;
-            font-size: 3rem;
-            color: rgb(0, 139, 211);
-            display: inline-block;
-        }
-        .subtitle {
-            padding-left: 48px;
-            animation: fadeIn 0.66666s linear forwards;
-            font-size: 2.5rem;
-            color: rgb(105, 159, 205);
-            display: inline-block;
-            position: absolute;         
-        }
-        .sub-1 {
-            top: 2.8rem;
-            left: 2rem;
-        }
-        .sub-2 {
-            top: 5rem;
-            left: 2rem;
-        }
-    </style>
+    <link rel="stylesheet" href="common.css">
 </head>
 <body>
-<a href="index.html">
-    <div class="title-container text-shadow">
-        <div class="title">StreamLev</div>
-        <div class="subtitle sub-1">Optimisation</div>
-        <div class="subtitle sub-2">Opérationnelle</div>
-    </div>
+<a href="index.html" class="title-container text-shadow">
+    <div class="title">StreamLev</div>
+    <div class="subtitle sub-1 lang-fr">Optimisation</div>
+    <div class="subtitle sub-2 lang-fr">Opérationnelle</div>
+    <div class="subtitle sub-1 lang-en">Operational</div>
+    <div class="subtitle sub-2 lang-en">Optimization</div>
 </a>
+<span onclick="changeLang('fr')" class="lang-choice lang-en">Français</span><span onclick="changeLang('en')" class="lang-choice lang-fr">English</span>
 
-
-<div class="policy-cookie">
-<div class="language">
+<div class="legal-notice">
+<div class="lang-fr">
     <h1>Politique des cookies</h1>
     Chez StreamLev, nous utilisons des cookies pour améliorer votre expérience de navigation sur notre site Web. Cette politique de cookies explique ce que sont les cookies, comment nous les utilisons, les types de cookies que nous utilisons, les informations que nous collectons à l'aide des cookies, et comment cette information est utilisée.
     
@@ -127,7 +49,7 @@
     <br><br><br><br>
     <br><br><br><br>
 </div>
-<div class="language">
+<div class="lang-en">
     <h1>Cookies Policy</h1>
     At StreamLev, we use cookies to enhance your browsing experience on our website. This cookie policy explains what cookies are, how we use them, the types of cookies we use, the information we collect using cookies, and how that information is used.
 
@@ -156,6 +78,7 @@
     <br><br><br><br>
     <br><br><br><br>
 </div>
+<script src="common.js"></script>
 </body>
 </html>     
 

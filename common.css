@@ -1,0 +1,128 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    font-family: "GFS Didot", serif;
+    user-select: none;
+    background: linear-gradient(180deg, #FFFFF0 70%, #FFFFFF 100%);
+    font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 0;
+}
+
+.visible {
+    display: block !important;
+}
+
+.disable {
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.lang-choice {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    color: black;
+    border-bottom: 1px solid black;
+}
+
+.lang-choice:hover {
+    cursor: pointer;
+}
+
+        
+b {
+    font-size: 22px;
+    text-align: left;;
+}
+h1, h2, h3, h4, b {
+    color: rgb(0, 139, 211);
+    font-weight: 900;
+    margin: 12px;
+    margin-left: 0px;
+    text-align: left;;
+}
+h2, h3, h4 {
+    display: inline-block;
+}
+br {
+    padding: 32px;
+    display: block;
+}
+.title-container {
+    width: fit-content;
+    position: relative;
+    font-weight: 400;
+    font-style: normal;
+    height: 120px;
+}
+.text-shadow {
+    text-shadow: 1px 1px 2px rgba(128, 128, 128, 0.5), /* Ombre plus proche pour définition */
+                 1px 3px 3px rgba(128, 128, 128, 0.3); /* Ombre plus large pour profondeur */
+}
+.title {
+    padding-left: 48px;
+    font-size: 3rem;
+    color: rgb(0, 139, 211);
+    display: inline-block;
+}
+.subtitle {
+    padding-left: 48px;
+    animation: fadeIn 0.66666s linear forwards;
+    font-size: 2.5rem;
+    color: rgb(105, 159, 205);
+    display: inline-block;
+    position: absolute;         
+}
+.sub-1 {
+    top: 2.8rem;
+    left: 2rem;
+}
+.sub-2 {
+    top: 5rem;
+    left: 2rem;
+}
+b {
+    font-size: 22px;
+    text-align: left;;
+}
+h1, h2, h3, h4, h5, b {
+    color: rgb(0, 139, 211);
+    font-weight: 900;
+    margin: 12px;
+    margin-left: 0px;
+    text-align: left;;
+}
+h2, h3, h4 {
+    display: inline-block;
+}
+br {
+    padding: 32px;
+    display: block;
+}
+.legal-notice {
+    font-size: 18px;
+    height: 100%;
+    overflow-y: scroll;
+    text-align: justify;
+    white-space: pre-line;
+    margin: 24px;
+    display: flex;
+    border-top: 1px solid #999;
+}
+a {
+    display: inline-block;
+}

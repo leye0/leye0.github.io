@@ -9,21 +9,29 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=GFS+Didot&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="common.css">
 </head>
 
 <body>
     <div class="overlay-panel"></div>
-    <div class="sky">
+    <div class="sky">                
         <div class="clouds"></div>
         <div class="color-cloud"></div>
         <div class="title-container text-shadow">
             <div class="title">StreamLev</div>
-            <div class="subtitle sub-1">Optimisation</div>
-            <div class="subtitle sub-2">Opérationnelle</div>
+            <div class="subtitle sub-1 lang-fr">Optimisation</div>
+            <div class="subtitle sub-2 lang-fr">Opérationnelle</div>
+            <div class="subtitle sub-1 lang-en">Operational</div>
+            <div class="subtitle sub-2 lang-en">Optimization</div>
 
-            <blockquote class="styled-quote quote-1">
+            <blockquote class="styled-quote quote-1 lang-fr">
                 <p>Imaginez embaucher uniquement les meilleurs travailleurs.</p>
                 <p>Quel que soit leur parcours personnel ou leur niveau de compétence dans leur domaine d'expertise.</p>
+            </blockquote>
+
+            <blockquote class="styled-quote quote-1 lang-en">
+                <p>Imagine hiring only the best workers.</p>
+                <p>Regardless of their personal background or level of skill in their field of expertise.</p>
             </blockquote>
         </div>
 
@@ -55,35 +63,58 @@
             <video class="floating-video" autoplay muted loop>
                 <source src="https://videos.pexels.com/video-files/3196062/3196062-sd_640_360_25fps.mp4"
                     type="video/mp4">
-                Votre navigateur ne supporte pas la balise vidéo.
+                Unsupported video.
             </video>
         </div>
-
         <form id="contactForm" onsubmit="handleSubmit(event)">
-            <h2 class="contact-button">Contactez-nous</h2>
+            <h2 class="contact-button">
+                <span class="lang-fr">Contactez-nous</span>
+                <span class="lang-en">Contact us</span>
+            </h2>
             <div class="contact-form-group">
                 <br>
-                <input type="text" name="firstname" placeholder="Prénom" class="form-input">
-                <input type="text" name="lastname" placeholder="Nom" class="form-input">
-                <input type="email" name="email" placeholder="Votre email" required class="form-input">
-                <input type="text" name="number" placeholder="No. téléphone" class="form-input">
-                <input type="text" name="business" placeholder="Votre entreprise" class="form-input">
+                <input type="text" name="firstname" placeholder="First name" class="form-input">
+                <input type="text" name="lastname" placeholder="Last name" class="form-input">
+                <input type="email" name="email" placeholder="Email" required class="form-input">
+                <input type="text" name="number" placeholder="Phone" class="form-input">
+                <input type="text" name="business" placeholder="Company" class="form-input">
+                <input class="lang-input" type="hidden" name="lang" value="en">
                 <br>
                 <textarea name="message" placeholder="Message" required class="form-textarea"></textarea>
                 <div class="g-recaptcha" data-sitekey="6LenS9MSAAAAAJMdMsBA9o3e_Ij4_fHe38iegX-H"></div>
                 <br>
-                <button type="submit" class="form-button">Envoyer</button>
+                <button type="submit" class="form-button">Send</button>
             </div>
         </form>
     </div>
+    <span onclick="changeLang('fr')" class="lang-choice lang-en">Français</span><span onclick="changeLang('en')" class="lang-choice lang-fr">English</span>
 
     <div id="cookie-popup" class="cookie-popup">
-        Notre site utilise des cookies pour améliorer votre expérience.
-        <a class="showmore" href="cookie-policy.html">En savoir plus</a>
-        <button class="accept-cookies">Accepter</button>
-        <button class="reject-cookies">Rejeter</button>
+        <span class="lang-fr">Notre site utilise des cookies pour améliorer votre expérience.</span>
+        <span class="lang-en">Our website uses cookies to enhance your experience.</span>
+        <a class="showmore" href="cookie-policy.html">
+            <span class="lang-fr">En savoir plus</span>
+            <span class="lang-en">Show more</span>
+        </a>
+        <button class="accept-cookies">
+            <span class="lang-fr">Accepter</span>
+            <span class="lang-en">Accept</span>
+        </button>
+        <button class="reject-cookies">
+            <span class="lang-fr">Rejeter</span>
+            <span class="lang-en">Reject</span>
+        </button>
     </div>
+    <a href="terms-and-conditions.html" class="legal-link">
+        <span class="lang-fr">Conditions d'utilisation</span>
+        <span class="lang-en">Terms and conditions</span>
+    </a>
+    <a href="privacy.html" class="legal-link">
+        <span class="lang-fr">Politique de vie privée</span>
+        <span class="lang-en">Privacy policy</span>
+    </a>
     <script src="index.js"></script>
+    <script src="common.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>
 
