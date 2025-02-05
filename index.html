@@ -23,51 +23,17 @@
             <div class="subtitle sub-2 lang-fr">Opérationnelle</div>
             <div class="subtitle sub-1 lang-en">Operational</div>
             <div class="subtitle sub-2 lang-en">Optimization</div>
-
-            <blockquote class="styled-quote quote-1 lang-fr">
-                <p>Imaginez embaucher uniquement les meilleurs travailleurs.</p>
-                <p>Quel que soit leur parcours personnel ou leur niveau de compétence dans leur domaine d'expertise.</p>
-            </blockquote>
-
-            <blockquote class="styled-quote quote-1 lang-en">
-                <p>Imagine hiring only the best workers.</p>
-                <p>Regardless of their personal background or level of skill in their field of expertise.</p>
-            </blockquote>
+            <blockquote class="styled-quote"></blockquote>
         </div>
-
-        <div class="floating-video-container floating-video-container-1">
-            <video class="floating-video" autoplay muted loop>
-                <source src="https://videos.pexels.com/video-files/5725960/5725960-sd_640_360_30fps.mp4"
-                    type="video/mp4">
-                Votre navigateur ne supporte pas la balise vidéo.
-            </video>
-        </div>
-
-        <div class="floating-video-container floating-video-container-2">
-            <video class="floating-video" autoplay muted loop>
-                <source src="https://videos.pexels.com/video-files/3196061/3196061-sd_640_360_25fps.mp4"
-                    type="video/mp4">
-                Votre navigateur ne supporte pas la balise vidéo.
-            </video>
-        </div>
-
-        <div class="floating-video-container floating-video-container-3">
-            <video class="floating-video" autoplay muted loop>
-                <source src="https://videos.pexels.com/video-files/3249940/3249940-sd_640_360_25fps.mp4"
-                    type="video/mp4">
-                Votre navigateur ne supporte pas la balise vidéo.
-            </video>
-        </div>
-
-        <div class="floating-video-container floating-video-container-4">
-            <video class="floating-video" autoplay muted loop>
-                <source src="https://videos.pexels.com/video-files/3196062/3196062-sd_640_360_25fps.mp4"
-                    type="video/mp4">
-                Unsupported video.
-            </video>
+        <div class="services-container">
+            <h2 class="services-button big-button">
+                <span class="lang-fr">Nos services</span>
+                <span class="lang-en">Our services</span>
+            </h2>
+            <div class="services-content"></div>
         </div>
         <form id="contactForm" onsubmit="handleSubmit(event)">
-            <h2 class="contact-button">
+            <h2 class="contact-button big-button">
                 <span class="lang-fr">Contactez-nous</span>
                 <span class="lang-en">Contact us</span>
             </h2>
@@ -86,6 +52,7 @@
                 <button type="submit" class="form-button">Send</button>
             </div>
         </form>
+        
     </div>
     <span onclick="changeLang('fr')" class="lang-choice lang-en">Français</span><span onclick="changeLang('en')" class="lang-choice lang-fr">English</span>
 
@@ -110,11 +77,16 @@
         <span class="lang-en">Terms and conditions</span>
     </a>
     <a href="privacy.html" class="legal-link">
-        <span class="lang-fr">Politique de vie privée</span>
+        <span class="lang-fr">Politique de confidentialité</span>
         <span class="lang-en">Privacy policy</span>
-    </a>
-    <script src="index.js"></script>
+    </a><br>
+    <span class="legal-link">
+        <span class="lang-fr">© 2025 StreamLev. Tous droits réservés.</span>
+        <span class="lang-en">© Copyright 2025 StreamLev. All right reserved.</span>
+    </span>
+    <script src="data.js"></script>
     <script src="common.js"></script>
+    <script src="index.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>
 

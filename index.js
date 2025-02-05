@@ -89,5 +89,13 @@ function handleSubmit(event) {
 }
 
 document.addEventListener('language-changed', function(event) {
-    setContactForm();
+    init();
 });
+
+function init() {
+    setContactForm();
+    buildServicesDivs(getLang());
+    setBlockQuote(getLang());
+}
+
+init();

@@ -22,7 +22,7 @@
     height: 100vh;
     background-size: 200% 200%;
     transition: opacity 0.3s ease;
-    background: rgba(3, 65, 130, 0.8);
+    background: rgba(88, 95, 102, 0.9);
 }
 
 .overlay {
@@ -96,155 +96,6 @@
     }
 }
 
-@keyframes fade-video-1 {
-    0% {
-        opacity: 0;
-    }
-
-    5% {
-        opacity: 1;
-    }
-
-    28.57% {
-        opacity: 1;
-    }
-
-    29.57% {
-        opacity: 0;
-    }
-
-    37.14% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}
-
-@keyframes fade-video-2 {
-    0% {
-        opacity: 0;
-    }
-
-    22% {
-        opacity: 0;
-    }
-
-    28.57% {
-        opacity: 1;
-    }
-
-    37.14% {
-        opacity: 1;
-    }
-
-    42% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}
-
-@keyframes fade-video-3 {
-    0% {
-        opacity: 0;
-    }
-
-    42% {
-        opacity: 0;
-    }
-
-    43.57% {
-        opacity: 1;
-    }
-
-    48.57% {
-        opacity: 1;
-    }
-
-    55.57% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}
-
-@keyframes fade-video-4 {
-    0% {
-        opacity: 0;
-    }
-
-    51.57% {
-        opacity: 0;
-    }
-
-    52.57% {
-        opacity: 1;
-    }
-
-    67.57% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}
-
-.floating-video-container {
-    position: fixed;
-    /* Rendre la div flottante par rapport à la fenêtre */
-    width: 20vw;
-    height: 20vw;
-    /* Largeur de la div */
-    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.25);
-    /* Ajout d'une ombre pour un effet visuel */
-    border-radius: 100%;
-    /* Coins arrondis */
-    overflow: hidden;
-    /* Assure que le coin de la vidéo est arrondi */
-    z-index: 5;
-    /* Assurer que la vidéo flotte au-dessus d'autres éléments */
-    opacity: 0;
-    /* Initialise tous les conteneurs à invisible */
-    animation-duration: 18s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    /* Boucle infinie */
-
-    top: 5vw;
-    right: 5vw;
-}
-
-.floating-video-container-1 {
-    animation-name: fade-video-1;
-}
-
-.floating-video-container-2 {
-    animation-name: fade-video-2;
-}
-
-.floating-video-container-3 {
-    animation-name: fade-video-3;
-}
-
-.floating-video-container-4 {
-    animation-name: fade-video-4;
-}
-
-.floating-video {
-    width: 180%;
-}
-
-video {
-    margin-bottom: -8px;
-}
-
 .styled-quote {
     margin-top: 5rem;
     position: relative;
@@ -274,7 +125,7 @@ video {
 
 .legal-link {
     color: black;
-    bottom: 24px;
+    bottom: 48px;
     margin-left: 16px;
     font-size: 10px;
     position: relative;
@@ -288,7 +139,15 @@ video {
     color: white;
 }
 
+.services-container {
+    bottom: calc(48px + 120px);
+}
+
 #contactForm {
+    bottom: 48px;
+}   
+
+#contactForm, .services-container {
     z-index: 15;
     max-width: 512px;
     padding: 20px;
@@ -297,23 +156,23 @@ video {
     background-color: #f9f9f9;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
     position: absolute;
-    bottom: 48px;
     left: 12px;
     right: 12px;
 }
+
 
 .contact-form-group {
     display: none;
 }
 
-.contact-button {
+.big-button {
     display: block;
     user-select: none;
     cursor: pointer;
     color: #007bff;
 }
 
-.contact-button:hover {
+.big-button:hover {
     text-decoration: underline;
 }
 
