@@ -126,3 +126,8 @@ br {
 a {
     display: inline-block;
 }
+
+.forms {
+    width: 100vw;
+    height: 65vh;
+}
